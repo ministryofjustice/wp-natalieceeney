@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-size: 100%;
+	font-family: 'Cabin', sans-serif;
+}
+
+/* only required for local loading 
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Cabin Bold'), local('Cabin-Bold'), url(http://themes.googleusercontent.com/static/fonts/cabin/v4/haOjnueK8Or1ztuuRtr8dvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+*/
+#content {
+	width:720px;
+}
+.post {
+	margin-left:0px;
+	padding-left:0px;
+	width:100%;
+	text-align:left;
+	float:left;
+}
+.post-date-box {
+	margin: 20px 0 0 0px;
+	padding-left:0px;
+    font-size: 0.8em;
+	width:100%;
+	text-align:left;
+	float:left;
+	background-image: url('../images/hr.gif');
+	background-repeat:repeat-x;
+	background-position:0px 18px;
+}
+.post-date {
+	/*width:50%;*/
+	margin-left:0px;
+	padding-left:0px;
+	background: none;
+	float:left;
+	color: #222222;
+	text-align:left;
+	background-image: url('../images/hr.gif');
+	background-repeat:repeat-x;
+	background-position:0px 18px;
+}  
+.post-date p {
+	display:inline-block;
+	background: none;
+	background-color: #fff;
+	text-align:left;
+	margin-left:0px;
+	padding-left:0px;
+	padding-right: 8px;
+}  
+.post-comments {
+	margin-left:0px;
+	padding-left:0px;
+	float:right;
+	text-align:left;
+	width:55%;
+	
+}
+.post-comments  a {
+	background-color: #fff;
+	margin-left:0px;
+	padding-left:0px;
+	padding:0 8px;
+	float:left;
+	text-align:left;
+}
+.entry {
+	margin-left:0px;
+	padding-left:0px;
+	float:left;
+/*	clear:left;*/
+}

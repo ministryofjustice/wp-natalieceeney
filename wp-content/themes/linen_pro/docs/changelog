@@ -1,0 +1,72 @@
+== Changelog ==
+= 1.3.8 =
+* Cleaned up featured slider query code
+* Added valign styles for tables
+* Added caption on attachment page
+
+= 1.3.7 =
+* Added small tag styling
+* Removed month limit on Sitemap template
+* Removed stats code option
+
+= 1.3.6 =
+* Added Google+ icon
+* Fixed display of excerpt on archive/category pages
+
+= 1.3.5 =
+* Fixed font size for TextWidgets
+
+= 1.3.4 =
+* Fixed bug with featured slider flickering in certain situations
+* Fixed text widget spacing
+* Added dl and table styling
+* Fixed image stretching in old versions of Internet Explorer
+
+= 1.3.3 =
+* Fixing a few bugs with the attachment template
+
+= 1.3.2 =
+* Improve line-height and font-size for sidebar text widgets
+
+= 1.3.1 =
+* Styled paragraph margins on featured slider to better fit the slider area
+
+= 1.3 =
+* Added option to include sticky posts in standard list (in addition to featured slider)
+* Added support for the_excerpt on posts
+* Added graceful slider degradation when Javascript disabled
+* Slider can now contain 1 post (previously required at least 2)
+* Added attachment template file for post attachment display
+* Added support for static front pages with separate post pages - slider now appears on both
+
+= 1.2.4 =
+* Fixed max-width on pages without sidebars
+
+= 1.2.3 =
+* Fixed max-width on pages with sidebars
+
+= 1.2.2 =
+* Fixed images being squished on the full-width page template
+
+= 1.2.1 =
+* Fixed formatting bug on comments header
+
+= 1.2.0 =
+* Added CSS selectors for footer widgets
+* Fixed front page to display proper number of "non-featured" posts when slider is enabled
+* Fixed various translation bugs
+* Removed duplicate header on custom search widget
+* Changed admin styles to match WordPress defaults
+* Made header clickable in featured slider
+* Accessibility improvements on search form
+* Fixed maximum widths for images & other media
+* Fixed buggy "comments disabled/off" messages on posts with comments disabled
+
+= 1.1.1 =
+* Fixed SQL error when Featured Slider enabled with no sticky posts and a static front page.
+
+= 1.1 =
+* Replaced the old logo uploader with a faster version that uses WP core
+* Strip tags from text in the featured slider to prevent breakage
+* Hide featured slider unless 2 sticky posts are present
+* Upgrade to the latest version of Slides (1.0.2)

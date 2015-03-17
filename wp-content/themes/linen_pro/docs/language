@@ -1,0 +1,3 @@
+Translation instructions:
+
+Download the package from http://translate.thethemefoundry.com and find the .mo file for your theme and language. Next, create a /languages directory within your theme directory (eg. linen_pro/languages) or your PRO child theme (eg. linen_pro_child/languages) directory and copy the .mo into the new directory. Finally, define your language in your wp-config.php file.

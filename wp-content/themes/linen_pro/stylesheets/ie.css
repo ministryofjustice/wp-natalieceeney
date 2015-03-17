@@ -1,0 +1,5 @@
+/* clear the floats for all our IE friends*/
+/*.clear, */li.comment { zoom: 1; }
+.post-date { background-color: #333; }
+/*#commentform #comment { margin-left: -20px; }*/
+div#footer.clear div#footer-4.footer-column form#search-form div input#search-btn {padding:2px 4px; margin-left:5px;}
