@@ -22,7 +22,7 @@
 #slides div.slide {	position: absolute;	top: 25px;	right:25px;	width: 100%;	z-index: 100;}
 #slides div.show-slide {	display: block;}  
 .slide img {position: absolute;	z-index: 50;	width: 652px;	height: 353px;	top: -20px;	left:55px;	display:block;}  
-.slide-content {z-index: 100;	position: absolute; right:-25px;	width: 560px;	height:133px;	padding:5px 20px 15px 30px; background-color:#056EB6; box-shadow: 3px 3px 3px #888; margin-top:88px; opacity:0.75;filter:alpha(opacity=75);}
+.slide-content {z-index: 100;	position: absolute; right:-25px;	width: 560px;	height:133px;	padding:5px 20px 15px 30px; background-color:#056EB6; box-shadow: 3px 3px 3px #888; margin-top:88px; opacity:0.9;filter:alpha(opacity=75);}
 .slide-content h2 {	color:#666;	font-size: 1.4em;	font-family: Helvetica, Arial, sans-serif;	font-weight: normal;	text-shadow: 0 1px 0 #222;}
 .slide-content p {font-size: 1.5em;	line-height: 1.8em;	margin: 0 0 10px 0; color:#efefef;}
 /*.slide-content p span.top {background:url(/wp-content/themes/linen_pro/images/top-quote.gif) no-repeat; height:40px; width:46px;}
