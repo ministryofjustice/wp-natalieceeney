@@ -32,6 +32,11 @@ License URI: LICENSE
 -----------------------------------------------------------*/
 @import url("stylesheets/master.css");
 
+.answer {
+  margin-left: 15px;
+  margin-bottom: 30px;
+}
+
 /* Required WordPress Classes, don't remove these.
 -----------------------------------------------------------*/
 .aligncenter {
