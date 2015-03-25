@@ -1,31 +1,30 @@
 <?php
 	function linen_custom_comment ( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
+		$answer = "";
 	?>
-	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>" >
+
+	<?php if( !empty( $comment->comment_parent ) ): $answer = "answer"; endif;?>
+	<li <?php comment_class($answer); ?> id="comment-<?php comment_ID(); ?>" >
 		<div class="c-grav"><?php echo get_avatar( $comment, '62' ); ?></div>
 		<div class="c-body">
+			<?php if( empty( $comment->comment_parent ) ): ?>
 			<div class="c-head">
-				<?php comment_author_link(); ?> 
-				<span class="c-permalink">
-					<a href="<?php echo get_permalink(); ?>#comment-<?php comment_ID(); ?>">#</a>
-					<?php edit_comment_link( 'edit' ); ?>
-				</span>
+				Question from <?php comment_author_link(); ?>
 			</div>
+			<?php else: ?>
+			<div class="c-head">
+				Natalie's Answer
+			</div>
+			<?php endif; ?>
+			<?php echo "qwd" . $comment->comment_approved; ?>
 			<?php if ($comment->comment_approved == '0' ) : ?>
-				<p><?php _e( '<em><strong>Please Note:</strong> Your comment is awaiting moderation.</em>', 'linen' ); ?></p>
+				<p><?php _e( '<em><strong>Please Note:</strong> Your question is awaiting moderation.</em>', 'linen' ); ?></p>
 			<?php endif; ?>
 			<?php comment_text(); ?>
 			<?php comment_type(( '' ),( 'Trackback' ),( 'Pingback' )); ?>
-			<div class="c-date">
-				<?php comment_date( 'F j, Y' ); ?>
-			</div>
-			<div class="reply">
-				<?php echo comment_reply_link(array( 'depth' => $depth, 'max_depth' => $args['max_depth']));	 ?>
-			</div>
-			
 		</div><!--end c-body-->
-		<?php 
+		<?php
 }
 
 // Template for pingbacks/trackbacks
