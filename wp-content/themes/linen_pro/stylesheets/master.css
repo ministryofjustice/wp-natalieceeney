@@ -71,8 +71,8 @@ div.skip-content {display: none;}
 ------------------------------------------------------------ */
 #header {padding: 30px;}
 #title {padding-bottom: 10px;	font-size: 3.6em;	font-family: Helvetica, Arial, sans-serif;	font-weight: normal;}
-#title a:link, #title a:visited {color: #444;	text-decoration: none;}
-#title a:hover {color: #1f2d61;	text-decoration: none;}
+#title a:link, #title a:visited {color: #000;	text-decoration: none;}
+#title a:hover {color: #383838;	text-decoration: underline;}
 
 svg { height: 200px;}
 /*Description
@@ -121,7 +121,7 @@ svg { height: 200px;}
 --------------------*/
 .nav a.sf-with-ul {padding-right: 30px;	min-width: 1px; /* trigger IE7 hasLayout so spans position accurately */
 }
-.sf-sub-indicator {position: absolute;	display: block;	right: 10px;	bottom: 16px; /* IE6 only */
+.sf-sub-indicator {position: absolute; display: block; right: 10px; bottom: 16px; /* IE6 only */
 	width: 10px;	height: 10px;	text-indent: -999em;	overflow: hidden;	background: url(../images/nav-arrows.png) no-repeat -10px -100px; /* 8-bit indexed alpha png. IE6 gets solid image only */
 }
 a > .sf-sub-indicator { /* give all except IE6 the correct values */
