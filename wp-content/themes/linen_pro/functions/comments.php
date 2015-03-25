@@ -17,7 +17,6 @@
 				Natalie's Answer
 			</div>
 			<?php endif; ?>
-			<?php echo "qwd" . $comment->comment_approved; ?>
 			<?php if ($comment->comment_approved == '0' ) : ?>
 				<p><?php _e( '<em><strong>Please Note:</strong> Your question is awaiting moderation.</em>', 'linen' ); ?></p>
 			<?php endif; ?>
