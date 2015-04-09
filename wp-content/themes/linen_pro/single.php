@@ -4,7 +4,7 @@
 			<div id="post-<?php the_ID(); ?>" <?php post_class( 'single' ); ?>>
 				<h1 class="single-post-title"><?php the_title(); ?></h1>
 				<div class="single-post-meta">
-					<?php printf( __( 'by %s on', 'linen' ), get_the_author()); ?> <?php the_date(); ?>
+					 <?php the_date(); ?>
 				</div>
 				<div class="entry single clear">
 					<?php if ( has_post_thumbnail() ) {
