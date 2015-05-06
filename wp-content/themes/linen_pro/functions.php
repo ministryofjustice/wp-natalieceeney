@@ -162,3 +162,14 @@ function attach_city_to_author( $author ) {
     $author .= " ($city)";
   return $author;
 }
+
+
+  function custom_validate_comment() {
+    //validate for author and job
+if( empty( $_POST['author']) || empty( $_POST['job'])  )
+        wp_die( __('Error: you must fill in both the Name and the Job Title') );
+    }
+
+add_action('pre_comment_on_post', 'custom_validate_comment');
+
+
