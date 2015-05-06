@@ -41,7 +41,7 @@
 				<?php $upload_dir = wp_upload_dir(); ?>
 				<div id="title">
 					<a href="<?php echo home_url( '/' ); ?>">
-						<img src="<?php echo $linen->logoName(); ?>" alt="<?php if ($linen->logoAlt() !== '' ) echo $linen->logoAlt(); else echo bloginfo( 'name' ); ?>" /><span>Natalie's blog</span>
+						<img src="<?php echo $linen->logoName(); ?>" alt="<?php if ($linen->logoAlt() !== '' ) echo $linen->logoAlt(); else echo bloginfo( 'name' ); ?>" /><span class="blogname">Natalie's blog</span>
 					</a>
 				</div>
 				<?php if ($linen->logoTagline() == 'true' ) : ?>

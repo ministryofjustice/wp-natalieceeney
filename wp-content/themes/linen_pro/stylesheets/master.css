@@ -350,7 +350,7 @@ a:hover#leavecomment {color: #434c6d;}
 /*Body
 ---------------------------------------*/
 li.comment {padding: 20px 0 0 0;}
-#comments ul.children {margin: 10px 0 0 124px;	clear: both;}
+#comments ul.children {margin: 10px 0 0 34px;	clear: both;}
 div.c-grav {float: left;	width: 60px;	margin-right:20px;	text-align: right;}
 div.c-grav img {-moz-box-shadow: 1px 1px 2px rgba( 100, 100, 100, .3);	-webkit-box-shadow: 1px 1px 2px rgba( 100, 100, 100, .3);	box-shadow: 1px 1px 2px rgba( 100, 100, 100, .3);}
 div.c-body {width: 496px;	font-size: 1.3em;	line-height: 1.8em;}

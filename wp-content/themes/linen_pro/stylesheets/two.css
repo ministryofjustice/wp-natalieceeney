@@ -5,6 +5,7 @@
 #header #title span a{margin-top:-5px;}
 #header #title {/*margin:0px 0 0 20px;padding: 12px 0 13px 19px;*/ margin:0 0 0 10px; white-space: nowrap;font-size: 56px;line-height: 1em;word-spacing: .175em;}
 #header #title img{margin-right:15px; border-right: 4px solid #056EB6;border-width:.4rem; padding-right:20px; /*max-width: 200px;*/}
+#header #title .blogname {position: absolute; font-size: 40px; margin-top: -4px; }
 #wrapper a:hover, #wrapper a:focus, #footer a:hover, #footer a:focus, #copyright a:hover, #copyright a:focus {/*border-bottom: 1px solid #BBB;*/text-decoration: none;}
 
 #navigation a, #sidebar h2.widgettitle, #footer .footer-column h2 {font-family: sans-serif;font-weight: 400;letter-spacing: -.025em;font-size: 18px;line-height: 1.1818181818;text-transform: none;}
@@ -14,7 +15,7 @@
 #copyright {margin-top:20px;}
 #navigation ul  {margin: 0 0 0 10px;padding: 0;}
 #navigation, #navigation ul li, #navigation ul li a  {padding: 0; margin: 0 8px 0 0; color: #000;}
-#navigation ul li a { padding: 2px 3px 0px 3px; background: #fff; background: rgba(255,255,255,.8); }
+#navigation ul li a { padding: 2px 3px 2px 3px; background:rgb(255,255,255); background: transparent\9; background:rgba(255,255,255,0.5); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66ffffff,endColorstr=#66ffffff); zoom: 1;}
 #navigation ul li a:hover {text-decoration: underline;}
 #navigation { border:none; height:10px; }
 #featured {	padding: 0 0 25px 0;	margin: 0;	position: relative; clear:left;	z-index: 0;  /*background-color:#e7eaea;*/ background:url(../images/header-content.jpg) no-repeat; height:309px;}
