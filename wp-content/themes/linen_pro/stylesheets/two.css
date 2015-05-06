@@ -38,3 +38,8 @@
 #slides a:hover.prev,
 #slides a:hover.next {	opacity: 1;	border-left: 1px solid #fff;}
 #slides a:hover.prev {	left: -51px;	border-left: none;	border-right: 1px solid #fff;}
+
+.entries li {margin: 6px 0 12px 0; border-bottom: solid 1px #efefef; padding: 0 0 12px 0;}
+.entries li a { font-size: 1em; }
+
+
