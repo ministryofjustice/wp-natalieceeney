@@ -29,7 +29,7 @@ Template Name: Questions archive
 				// Comment Loop
 				if ( $comments ) {
 					foreach ( $comments as $comment ) { ?>
-						<li><?php echo $comment->comment_author; ?> said: <a href="<?php echo get_comment_link( $comment->comment_ID ); ?>"> <?php echo get_comment_excerpt( $comment->comment_ID );  ?>.</a></li>
+						<li><?php echo $comment->comment_author; ?> said: <a href="<?php echo get_comment_link( $comment->comment_ID ); ?>"> <?php echo get_comment_excerpt( $comment->comment_ID );  ?> .</a> <span class="date-meta"><?php echo comment_date();  ?></span></li>
 					<?php }
 				} else {
 					echo 'No comments found.';
