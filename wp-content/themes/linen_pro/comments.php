@@ -55,13 +55,13 @@ comment_form( array(
 			(
 				$req ?
 				__( 'Name <span>(required)</span>:', 'linen' ) :
-				__( 'Name:', 'linen' )
+				__( 'Name (required):', 'linen' )
 			),
 			'',
 			1
 		),
 		'email' => sprintf(
-			'<p><label for="job" class="comment-field">Job Title:</label><input class="text-input" type="text" name="job" id="job" value="" size="22" tabindex="1"></p>',
+			'<p><label for="job" class="comment-field">Job Title (required):</label><input class="text-input" type="text" name="job" id="job" value="" size="22" tabindex="1"></p>',
 			'job',
 			(
 				$req ?
