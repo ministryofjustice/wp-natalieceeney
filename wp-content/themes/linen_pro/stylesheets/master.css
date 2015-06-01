@@ -279,9 +279,9 @@ body.page-template-tm-archives-php .entry h2 {font-size: 1.2em;	padding: 30px 0 
 #sidebar .textwidget {margin-top: 15px;}
 #sidebar h2.widgettitle {padding: 12px 0;	font-size: 1.1em;	font-family: Helvetica, Arial, sans-serif;	font-weight: normal;	letter-spacing: .1em;	text-transform: uppercase;	border-bottom: 1px solid #eee;	border-top: 1px solid #eee;}
 #sidebar .textwidget img {display:none;}
-#sidebar ul li.widget ul {margin: 15px 0 0 0;	font-size: 1.2em;}
-#sidebar ul li.widget ul li ul {margin-left: 5px;font-size: 1em;}
-#sidebar ul li.widget ul li {padding: 3px 0;line-height: 1.6em; font-size: 1.1em;}
+#sidebar ul li.widget ul {margin: 15px 0 0 0;	font-size: .95em;}
+#sidebar ul li.widget ul li ul {margin-left: 5px;font-size: 1em; }
+#sidebar ul li.widget ul li {padding: 3px 0;line-height: 1.4em; font-size: 1.1em; margin-bottom: 8px;}
 #sidebar div.textwidget p {margin: 10px 0 0 0;	font-size: 13px;	line-height: 1.8em;}
 li.widget select,
 li.widget_search form,
