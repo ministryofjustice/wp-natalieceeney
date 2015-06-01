@@ -15,12 +15,12 @@
 					<?php wp_link_pages(); ?>
 				</div><!--end entry-->
 				<div class="post-footer clear">
-					<div class="tags">
+					<!-- <div class="tags">
 						<?php the_tags( 'Tags: ', ', ', '' ); ?>
 					</div>
 					<div class="cats">
 						<?php printf( __( 'From: %s', 'linen' ), get_the_category_list( ', ' ) ); ?>
-					</div>
+					</div> -->
 				</div><!--end post footer-->
 			</div><!--end post-->
 		<?php endwhile; /* rewind or continue if all posts have been fetched */ ?>
