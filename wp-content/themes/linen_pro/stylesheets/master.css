@@ -363,7 +363,7 @@ div.c-head {margin: 0 0 15px 0;	font-family: Helvetica, Arial, sans-serif;}
 div.c-date {float: left;	padding: 10px 0 30px 0;	font-size: .9em;	font-style: italic;	color: #888;}
 .c-permalink a {margin-left: 5px;	font-size: .9em;	color: #bbb;}
 div.reply {/*float: right;*/	font-family: Helvetica, Arial, sans-serif;	font-size: .9em; }
-div.reply {padding: 10px 0 30px 0; margin-left:130px;}
+div.reply {padding: 10px 0 30px 0;}
 div.reply a {color: #aaa;	font-size: .9em;	border-bottom: 1px dotted;}
 a#cancel-comment-reply-link {float: right;	font-size: .75em;	color: #aaa;	border-bottom: 1px dotted;}
 div.reply a:hover,

@@ -22,6 +22,9 @@
 			<?php endif; ?>
 			<?php comment_text(); ?>
 			<?php comment_type(( '' ),( 'Trackback' ),( 'Pingback' )); ?>
+						<div class="reply">
+				<?php echo comment_reply_link(array( 'depth' => $depth, 'max_depth' => $args['max_depth']));	 ?>
+			</div>
 		</div><!--end c-body-->
 		<?php
 }
