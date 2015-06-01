@@ -14,7 +14,7 @@
 			</div>
 			<?php else: ?>
 			<div class="c-head">
-				Natalie's Response<br><span class="comment-date"><?php comment_date('j F Y'); ?></span>
+				<?php comment_author_link(); ?><br><span class="comment-date"><?php comment_date('j F Y'); ?></span>
 			</div>
 			<?php endif; ?>
 			<?php if ($comment->comment_approved == '0' ) : ?>
