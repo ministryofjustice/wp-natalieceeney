@@ -267,7 +267,7 @@ body.page-template-tm-archives-php .entry h2 {font-size: 1.2em;	padding: 30px 0 
 .entries li {margin: 15px 0;}
 .entries a {font-size: 1.2em;}
 .entries a:hover {text-decoration: underline;}
-.entries li span {display: block;	float: left;	width: 150px;	font-family: Helvetica, Arial, sans-serif;	font-size: 1.1em;	color: #555;}
+.entries li span {display: block;	float: left;	width: 165px;	font-family: Helvetica, Arial, sans-serif;	font-size: 1.1em;	color: #555;}
 
 /*---------------------------------------------------------
 	8. Sidebar
