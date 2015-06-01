@@ -43,4 +43,5 @@
 .entries li a { font-size: 1em; }
 .textwidget, .textwidget li {font-size: 1em; line-height: 1.8em;}
 .entries li .date-meta {font-size: .85em; float: none; display: inline-block;}
+span.comment-date {font-size: .75em; color: #383838;}
 
