@@ -14,7 +14,14 @@
 			</div>
 			<?php else: ?>
 			<div class="c-head">
-				<?php comment_author_link(); ?><br><span class="comment-date"><?php comment_date('j F Y'); ?></span>
+			<?php  
+       // $username = $_POST['username'];
+       if ( username_exists( 'vcj63z' ) )
+           echo "Natalie's response";
+       else
+           echo comment_author_link();
+		?>
+				<br><span class="comment-date"><?php comment_date('j F Y'); ?></span>
 			</div>
 			<?php endif; ?>
 			<?php if ($comment->comment_approved == '0' ) : ?>
