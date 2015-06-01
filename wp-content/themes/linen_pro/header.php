@@ -82,7 +82,7 @@
 						<!--<img scale="0" src="/wp-content/themes/linen_pro/images/ursula-banner.jpg" height="353" width="652">-->
 						<div class="slide-content">
 							<!--<h2>Get to know a bit more about me, what I'm up to and what makes me tick...</h2>-->
-							<p>My blog on what I'm up to and what's happening in the department. <br />Let me know what you think...</p>
+							<p>My blog about HMCTS... Please share your views.</p>
 						</div>
 					</div>
 				</div>

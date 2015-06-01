@@ -81,6 +81,6 @@ comment_form( array(
 	),
 	'label_submit' => __( 'Submit Question', 'linen' ),
 	'logged_in_as' => '<p class="com-logged-in">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out &raquo;</a>', 'linen' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink() ) ) ) . '</p>',
-	'title_reply' => __( 'Leave a Question', 'linen' ),
+	'title_reply' => __( 'Post a question or view', 'linen' ),
 	'title_reply_to' => __( 'Leave a answer to %s', 'linen' ),
 ) );

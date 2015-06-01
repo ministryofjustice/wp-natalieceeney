@@ -10,11 +10,11 @@
 		<div class="c-body">
 			<?php if( empty( $comment->comment_parent ) ): ?>
 			<div class="c-head">
-				Question from <?php comment_author_link(); ?>
+				<?php comment_author_link(); ?>
 			</div>
 			<?php else: ?>
 			<div class="c-head">
-				Natalie's Answer
+				Natalie's Response
 			</div>
 			<?php endif; ?>
 			<?php if ($comment->comment_approved == '0' ) : ?>
