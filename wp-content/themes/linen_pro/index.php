@@ -10,7 +10,7 @@
 					the_post_thumbnail( 'index-thumb' );
 				} ?>
 				<div class="post-comments">
-					<?php comments_popup_link( '',  __( '1 Question', 'linen' ), sprintf( __( '%s Questions', 'linen' ), get_comments_number ()/2), '', ''); ?>
+					<?php comments_popup_link( '',  __( '1 Comment or view', 'linen' ), sprintf( __( '%s Comments and views', 'linen' ), get_comments_number ()/2), '', ''); ?>
 				</div>
 			</div>
 			<div class="entry">
@@ -21,7 +21,7 @@
 					if ( $post->post_excerpt ) {
 						echo $linen->custom_excerpt();
 					} else {
-						the_content( __( 'Read more', 'linen' ) );
+						the_excerpt( __( 'Read more', 'linen' ) );
 					}
 				?>
 				<?php edit_post_link( __( 'Edit this', 'linen' ), '<p>', '</p>' ); ?>

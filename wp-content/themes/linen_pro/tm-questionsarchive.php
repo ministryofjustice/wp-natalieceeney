@@ -1,12 +1,12 @@
 <?php
 /*
-Template Name: Questions archive
+Template Name: Comments and views archive
 */
 ?>
 <?php get_header(); ?>
 
 	<?php if (have_posts()) : ?>
-		<h1 class="pagetitle">Questions archive</h1>
+		<h1 class="pagetitle">Comments and views archive</h1>
 		<div class="entry">
 
 		</div><!--end-entry-->

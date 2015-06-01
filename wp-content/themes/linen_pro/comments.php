@@ -6,9 +6,9 @@ endif; ?>
 <div id="comments">
 <?php if ( have_comments() ) : ?>
 	<div class="comment-number clear">
-		<span><?php comments_number( __( 'No Questions', 'linen' ), __( 'One Question', 'linen' ), sprintf( __( '%s Questions', 'linen' ), get_comments_number ()/2)); ?></span>
+		<span><?php comments_number( __( 'No Comments or views', 'linen' ), __( 'One Comment or view', 'linen' ), sprintf( __( '%s Comments and views', 'linen' ), get_comments_number ()/2)); ?></span>
 		<?php if ( comments_open() ) : ?>
-			<a id="leavecomment" href="#respond" title="<?php esc_attr_e( 'Post a question', 'linen' ); ?>"> <?php _e( 'Post a question', 'linen' ); ?></a>
+			<a id="leavecomment" href="#respond" title="<?php esc_attr_e( 'Post a comment or view', 'linen' ); ?>"> <?php _e( 'Post a comment or view', 'linen' ); ?></a>
 		<?php endif; ?>
 	</div><!--end comment-number-->
 	<ol class="commentlist">
@@ -16,8 +16,8 @@ endif; ?>
 	</ol>
 
 	<div class="navigation clear">
-		<div class="alignleft"><?php next_comments_link(__( '&laquo; Older Questions', 'linen' )); ?></div>
-		<div class="alignright"><?php previous_comments_link(__( 'Newer Questions &raquo;', 'linen' )); ?></div>
+		<div class="alignleft"><?php next_comments_link(__( '&laquo; Older', 'linen' )); ?></div>
+		<div class="alignright"><?php previous_comments_link(__( 'Newer &raquo;', 'linen' )); ?></div>
 	</div>
 	<?php if ( ! empty($comments_by_type['pings']) ) : ?>
 		<h3 class="pinghead"><?php _e( 'Trackbacks &amp; Pingbacks', 'linen' ); ?></h3>
@@ -33,11 +33,11 @@ endif; ?>
 <?php elseif ( comments_open() ) : // this is displayed if there are no comments so far ?>
 	<!-- If comments are open, but there are no comments. -->
 	<div class="comment-number">
-		<span><?php _e( 'No questions yet', 'linen' ); ?></span>
+		<span><?php _e( 'No Comments or views yet', 'linen' ); ?></span>
 	</div>
 <?php endif; ?>
 <?php if ( ! comments_open() && ! is_page() ) : // displayed when comments are closed, regardless of # of comments ?>
-	<p class="note"><?php _e( 'Questions are closed.', 'linen' ); ?></p>
+	<p class="note"><?php _e( 'Comments are closed.', 'linen' ); ?></p>
 <?php endif; ?>
 </div><!--end comments-->
 
@@ -79,8 +79,8 @@ comment_form( array(
 //			3
 //		),
 	),
-	'label_submit' => __( 'Submit Question', 'linen' ),
+	'label_submit' => __( 'Submit', 'linen' ),
 	'logged_in_as' => '<p class="com-logged-in">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out &raquo;</a>', 'linen' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink() ) ) ) . '</p>',
-	'title_reply' => __( 'Post a question or view', 'linen' ),
+	'title_reply' => __( 'Post a comment or view', 'linen' ),
 	'title_reply_to' => __( 'Leave a answer to %s', 'linen' ),
 ) );

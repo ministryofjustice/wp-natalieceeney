@@ -18,7 +18,7 @@
 			</div>
 			<?php endif; ?>
 			<?php if ($comment->comment_approved == '0' ) : ?>
-				<p><?php _e( '<em><strong>Please Note:</strong> Your question is awaiting moderation.</em>', 'linen' ); ?></p>
+				<p><?php _e( '<em><strong>Please Note:</strong> Your comment is awaiting moderation.</em>', 'linen' ); ?></p>
 			<?php endif; ?>
 			<?php comment_text(); ?>
 			<?php comment_type(( '' ),( 'Trackback' ),( 'Pingback' )); ?>
