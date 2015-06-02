@@ -169,7 +169,7 @@ li.sfHover > a > .sf-sub-indicator {background-position: -10px -100px;}
 /*---------------------------------------------------------
 	6. Post styling
 ------------------------------------------------------------ */
-.post {margin-bottom: 30px;}
+.post {margin-bottom: 10px;}
 .entry {margin: 0 0 10px 124px;	font-size: 1em;}
 .entry a {text-decoration: underline;}
 .single .entry,
@@ -199,7 +199,7 @@ div.post-comments a:hover {color: #333;}
 /*Post Body
 ---------------------------------------*/
 .entry a:hover {text-decoration: underline;}
-.entry p {margin-bottom: 15px;	line-height: 1.8em;}
+.entry p {margin-bottom: 15px;	line-height: 1.4em;}
 .entry h2,
 .entry h3,
 .entry h4 {font-family: Helvetica, Arial, sans-serif;	font-size: 1.4em;	font-weight: normal;	padding: 20px 0 10px 0;}
