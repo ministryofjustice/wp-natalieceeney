@@ -33,7 +33,7 @@ endif; ?>
 <?php elseif ( comments_open() ) : // this is displayed if there are no comments so far ?>
 	<!-- If comments are open, but there are no comments. -->
 	<div class="comment-number">
-		<span><?php _e( 'No Comments or views yet', 'linen' ); ?></span>
+		<span><?php _e( 'No comments or views yet', 'linen' ); ?></span>
 	</div>
 <?php endif; ?>
 <?php if ( ! comments_open() && ! is_page() ) : // displayed when comments are closed, regardless of # of comments ?>
@@ -61,7 +61,7 @@ comment_form( array(
 			1
 		),
 		'email' => sprintf(
-			'<p><label for="job" class="comment-field">Job Title (required):</label><input class="text-input" type="text" name="job" id="job" value="" size="22" tabindex="1"></p>',
+			'<p><label for="job" class="comment-field">Job title (required):</label><input class="text-input" type="text" name="job" id="job" value="" size="22" tabindex="1"></p>',
 			'job',
 			(
 				$req ?
