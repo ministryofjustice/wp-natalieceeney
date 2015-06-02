@@ -45,3 +45,7 @@
 .entries li .date-meta {font-size: .85em; float: none; display: inline-block;}
 span.comment-date {font-size: .75em; color: #383838;}
 
+.home #content .post:first-child {
+  font-size: 1.1em;
+  font-weight: bold;
+}
