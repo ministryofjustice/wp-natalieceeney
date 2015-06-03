@@ -180,7 +180,7 @@ li.sfHover > a > .sf-sub-indicator {background-position: -10px -100px;}
 .single-post-title {padding: 0 0 15px 0;	font-family: Helvetica, Arial, sans-serif;	font-weight: normal;}
 .entry h2.title a {color: #444;	text-decoration: none;}
 .entry h2.title a:hover {color: #434c6d;}
-.single-post-title {padding: 0 0 5px 0;	font-size: 2.5em;	line-height: 1.4em;}
+.single-post-title {padding: 0 0 5px 0;	font-size: 2.4em;	line-height: 1.4em;}
 .post-date-box {float: left;	position: relative;	margin-bottom: 30px;	width: 94px;	height: 94px;}
 .post-date-box.no-thumb {position: static;	height: auto;}
 .post-date {position: absolute;	/*width: 94px;*/
