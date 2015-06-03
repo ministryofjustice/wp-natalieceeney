@@ -48,3 +48,6 @@ span.comment-date {font-size: .75em; color: #383838;}
 .home #content .post:first-child {
   font-weight: bold;
 }
+/* Only display avatars for registered users */
+.comment .c-grav {display:none;}
+.comment.byuser .c-grav {display: block;}
