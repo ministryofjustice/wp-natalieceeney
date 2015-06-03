@@ -6,7 +6,7 @@
 
 	<?php if( !empty( $comment->comment_parent ) ): $answer = "answer"; endif;?>
 	<li <?php comment_class($answer); ?> id="comment-<?php comment_ID(); ?>" >
-		<div class="c-grav"><?php echo get_avatar( $comment, '62' ); ?></div>
+		<div class="c-grav"><?php echo get_wp_user_avatar( $comment, '62' ); ?></div>
 		<div class="c-body">
 			<?php if( empty( $comment->comment_parent ) ): ?>
 			<div class="c-head">
