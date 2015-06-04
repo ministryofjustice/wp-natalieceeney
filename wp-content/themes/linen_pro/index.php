@@ -10,7 +10,7 @@
 					the_post_thumbnail( 'index-thumb' );
 				} ?>
 				<div class="post-comments">
-					<?php comments_popup_link( '',  __( '1 Comment or view', 'linen' ), sprintf( __( '%s Comments and views', 'linen' ), get_comments_number ()/2), '', ''); ?>
+					<?php comments_popup_link( '',  __( '1 Comment or view', 'linen' ), sprintf( __( '%s Comments and views', 'linen' ), get_comments_number ()), '', ''); ?>
 				</div>
 			</div>
 			<div class="entry">
