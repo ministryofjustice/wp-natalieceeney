@@ -16,7 +16,7 @@
 			<div class="c-head">
 			<?php  
        // $username = $_POST['username'];
-       if ( get_comment_author() == "vcj63z" )
+       if ( get_comment_author() == "Anju Sinha" )
            echo "Natalie's response";
        else
            echo comment_author_link();
