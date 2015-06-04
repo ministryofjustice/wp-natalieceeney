@@ -6,7 +6,7 @@ endif; ?>
 <div id="comments">
 <?php if ( have_comments() ) : ?>
 	<div class="comment-number clear">
-		<span><?php comments_number( __( 'No Comments or views', 'linen' ), __( 'One Comment or view', 'linen' ), sprintf( __( '%s Comments and views', 'linen' ), get_comments_number ()/2)); ?></span>
+		<span><?php comments_number( __( 'No Comments or views', 'linen' ), __( 'One Comment or view', 'linen' ), sprintf( __( '%s Comments and views', 'linen' ), get_comments_number ())); ?></span>
 		<?php if ( comments_open() ) : ?>
 			<a id="leavecomment" href="#respond" title="<?php esc_attr_e( 'Post a comment or view', 'linen' ); ?>"> <?php _e( 'Post a comment or view', 'linen' ); ?></a>
 		<?php endif; ?>
