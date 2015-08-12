@@ -353,11 +353,8 @@ li.comment {padding: 20px 0 0 0;}
 #comments ul.children {margin: 10px 0 0 34px;	clear: both;}
 div.c-grav {float: left;	width: 60px;	margin-right:20px;	text-align: right;}
 div.c-grav img {-moz-box-shadow: 1px 1px 2px rgba( 100, 100, 100, .3);	-webkit-box-shadow: 1px 1px 2px rgba( 100, 100, 100, .3);	box-shadow: 1px 1px 2px rgba( 100, 100, 100, .3);}
-div.c-body {width: 496px;	font-size: 1.3em;	line-height: 1.8em;}
+div.c-body {font-size: 1.3em;	line-height: 1.8em;}
 li.bypostauthor div.c-body {padding-top: 10px;	border-top: 5px solid #ffa61f;}
-#content.no-sidebar div.c-body {width: 776px;}
-ul.children div.c-body {width: 372px;}
-#content.no-sidebar ul.children div.c-body {width: 652px;}
 div.c-body p {margin: 10px 0 0 0;}
 div.c-head {margin: 0 0 15px 0;	font-family: Helvetica, Arial, sans-serif;}
 div.c-date {float: left;	padding: 10px 0 30px 0;	font-size: .9em;	font-style: italic;	color: #888;}
@@ -388,7 +385,7 @@ form#commentform input#submit, div#footer.clear div#footer-4.footer-column form#
 
 
 form#commentform input#submit:hover, form#search-form input#submit:hover, div#footer.clear div#footer-4.footer-column form#search-form div input#search-btn:hover, #content div.entry.no-results form#search-form div input#search-btn:hover  {background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #3775bd), color-stop(1, #79bbff) );	background:-moz-linear-gradient( center top, #3775bd 5%, #79bbff 100% );	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3775bd', endColorstr='#79bbff');	background-color:#3775bd;}
-	
+
 form#commentform input#submit:active {position:relative;	top:1px;}
 
 
