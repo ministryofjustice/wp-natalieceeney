@@ -6,9 +6,6 @@
 				<div class="post-date">
 					<p><?php the_time( __( 'M j', 'linen' ) ); ?></p>
 				</div>
-				<?php if ( has_post_thumbnail() ) {
-					the_post_thumbnail( 'index-thumb' );
-				} ?>
 				<div class="post-comments">
 					<?php comments_popup_link( '',  __( '1 Comment or view', 'linen' ), sprintf( __( '%s Comments and views', 'linen' ), get_comments_number ()), '', ''); ?>
 				</div>
