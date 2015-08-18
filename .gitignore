@@ -11,6 +11,7 @@ info.php
 mail.php
 web.config
 readme.html
+.idea
 
 # wordpress specific
 wp-config.php
