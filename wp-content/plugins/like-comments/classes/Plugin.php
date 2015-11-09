@@ -19,29 +19,41 @@ class Plugin {
     public $table_name = null;
 
     /**
-     * @var wpdb
+     * Path to the plugin file
+     *
+     * @var string
      */
-    public $wpdb = null;
+    public $pluginFile = null;
 
     /**
      * Class constructor
      *
-     * @param wpdb $wpdb
+     * @param string $pluginFile
      */
-    public function __construct($wpdb) {
-        $this->wpdb = $wpdb;
-        $this->table_name = $this->wpdb->prefix . 'comment_likes';
+    public function __construct($pluginFile) {
+        $this->table_name = $this->wpdb()->prefix . 'comment_likes';
+        $this->pluginFile = $pluginFile;
 
         // Hook in to filters and actions
-        add_filter('comment_output',              array($this, 'comment_output'), 10, 4); // Filter comment HTML
-        add_filter('comments_array',              array($this, 'reorder_comments'));      // Sort comments by popularity
-        add_action('wp_enqueue_scripts',          array($this, 'enqueue_assets'));        // Add our CSS & JS to the page
-        add_action('wp_ajax_like_comment',        array($this, 'ajax_like_comment'));     // AJAX endpoint
-        add_action('wp_ajax_nopriv_like_comment', array($this, 'ajax_like_comment'));     // AJAX endpoint (for unauthenticated users)
+        add_filter('comment_output',                array($this, 'comment_output'), 10, 4); // Filter comment HTML
+        add_filter('comments_array',                array($this, 'reorder_comments'));      // Sort comments by popularity
+        add_action('wp_enqueue_scripts',            array($this, 'enqueue_assets'));        // Add our CSS & JS to the page
+        add_action('wp_ajax_like_comment',          array($this, 'ajax_like_comment'));     // AJAX endpoint
+        add_action('wp_ajax_nopriv_like_comment',   array($this, 'ajax_like_comment'));     // AJAX endpoint (for unauthenticated users)
 
         // Register activation hooks
-        register_activation_hook(__FILE__,        array($this, 'install_db'));            // Create database tables
-        register_uninstall_hook(__FILE__,         array($this, 'uninstall_db'));          // Remove database tables
+        register_activation_hook($this->pluginFile, array($this, 'install_db'));            // Create database tables
+        register_uninstall_hook($this->pluginFile,  array($this, 'uninstall_db'));          // Remove database tables
+    }
+
+    /**
+     * Get the global $wpdb object.
+     *
+     * @return wpdb
+     */
+    public function wpdb() {
+        global $wpdb;
+        return $wpdb;
     }
 
     /**
@@ -138,7 +150,7 @@ class Plugin {
             return '<span class="lc_like_count lc_like_count--empty">&nbsp;</span>';
         }
 
-        $imgUrl = plugins_url('/img/thumbsup.png', dirname(__FILE__));
+        $imgUrl = plugins_url('/img/thumbsup.png', $this->pluginFile);
         $likeCount = $comment->getLikeCount();
         $html = '&ndash; <img src="' . $imgUrl . '" width="18" height="18" alt="Thumbs up icon" /> ';
         $html .= $likeCount;
@@ -156,7 +168,7 @@ class Plugin {
      * @return void
      */
     public function enqueue_assets() {
-        wp_enqueue_script('like_comments', plugins_url('/js/scripts.js', dirname(__FILE__)), array('jquery'), $this->version, true);
+        wp_enqueue_script('like_comments', plugins_url('/js/scripts.js', $this->pluginFile), array('jquery'), $this->version, true);
 
         $jsConfig = array(
             'ajaxurl' => admin_url('admin-ajax.php'),
@@ -171,7 +183,7 @@ class Plugin {
      * @return Comment
      */
     public function newComment($commentID) {
-        return new Comment($commentID, $this, $this->wpdb);
+        return new Comment($commentID, $this, $this->wpdb());
     }
 
     /**
@@ -243,7 +255,7 @@ class Plugin {
      * Create a custom database table to store comment likes.
      */
     public function install_db() {
-        $charset_collate = $this->wpdb->get_charset_collate();
+        $charset_collate = $this->wpdb()->get_charset_collate();
 
         $sql = "CREATE TABLE {$this->table_name} (
                   user_ID char(23) NOT NULL,
@@ -260,9 +272,9 @@ class Plugin {
      * Remove traces of this plugin from the database.
      */
     public function uninstall_db() {
-        $this->wpdb->query("DROP TABLE IF EXISTS {$this->table_name}");
+        $this->oldWpdb->query("DROP TABLE IF EXISTS {$this->table_name}");
 
-        $metaTable = $this->wpdb->prefix . 'commentmeta';
-        $this->wpdb->query("DELETE FROM $metaTable WHERE meta_key = 'comment_likes'");
+        $metaTable = $this->wpdb()->prefix . 'commentmeta';
+        $this->oldWpdb->query("DELETE FROM $metaTable WHERE meta_key = 'comment_likes'");
     }
 }

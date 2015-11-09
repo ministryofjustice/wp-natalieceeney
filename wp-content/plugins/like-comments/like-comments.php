@@ -9,7 +9,7 @@
 require_once 'classes/Plugin.php';
 require_once 'classes/Comment.php';
 
-$LikeComments = new LikeComments\Plugin($wpdb);
+$LikeComments = new LikeComments\Plugin(__FILE__);
 
 /**
  * Pieces of the puzzle
