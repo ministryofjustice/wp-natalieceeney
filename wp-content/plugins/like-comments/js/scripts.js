@@ -26,7 +26,7 @@ jQuery(document).ready(function($) {
     var likeCommentCallback = function(likeButtonNode) {
         return function(responseData) {
             var likeButton = $(likeButtonNode);
-            var likeCount = likeButton.parents('.comment').find('.lc_like_count');
+            var likeCount = likeButton.parent().find('.lc_like_count');
             likeButton.replaceWith(responseData.likeButtonHtml);
             likeCount.replaceWith(responseData.likeCountHtml);
         }
