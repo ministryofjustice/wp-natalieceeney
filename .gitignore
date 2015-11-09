@@ -27,6 +27,7 @@ wp-content/plugins/akismet/*
 wp-content/plugins/hello.pho
 wp-content/languages/*
 wp-content/plugins/*
+!wp-content/plugins/like-comments
 
 # wpengine specific
 .smushit-status
