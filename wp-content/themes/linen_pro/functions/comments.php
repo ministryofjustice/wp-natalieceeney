@@ -1,5 +1,7 @@
 <?php
 	function linen_custom_comment ( $comment, $args, $depth ) {
+		ob_start();
+
 	$GLOBALS['comment'] = $comment;
 		$answer = "";
 	?>
@@ -34,6 +36,10 @@
 			</div>
 		</div><!--end c-body-->
 		<?php
+
+		$output = ob_get_clean();
+		$output = apply_filters('comment_output', $output, $comment, $args, $depth);
+		echo $output;
 }
 
 // Template for pingbacks/trackbacks

@@ -78,3 +78,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	/*float:left;*/
 /*	clear:left;*/
 }
+
+/**
+ * Like Comments plugin styling
+ */
+.lc_like_button {
+	font-size: 0.9em;
+}
+.lc_like_button--liked {
+	color: #aaa;
+}
