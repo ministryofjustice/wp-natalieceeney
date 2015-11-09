@@ -9,6 +9,11 @@ use DateTime;
 use DateTimeZone;
 
 class Plugin {
+    /**
+     * Plugin version number
+     *
+     * @var string
+     */
     public $version = '0.0.1';
 
     public $table_name = null;
@@ -102,6 +107,12 @@ class Plugin {
         return $output;
     }
 
+    /**
+     * Get the HTML for the like button.
+     *
+     * @param Comment $comment
+     * @return string
+     */
     public function like_button_html(Comment $comment) {
         $html = sprintf('<a href="#" data-comment-id="%1$d" class="lc_like_button">%2$s</a>', $comment->object->comment_ID, 'Like');
 
@@ -113,6 +124,12 @@ class Plugin {
         return $html;
     }
 
+    /**
+     * Get the HTML for the like count.
+     *
+     * @param Comment $comment
+     * @return string
+     */
     public function like_count_html(Comment $comment) {
         $likeCount = $comment->getLikeCount();
 
@@ -127,8 +144,8 @@ class Plugin {
         $html .= $likeCount;
 
         $title = $likeCount . ' ' . _n('person', 'people', $likeCount) . ' like this comment';
-
         $html = '<span class="lc_like_count" title="' . $title . '">' . $html . '</span>';
+        $html = apply_filters('LikeComments/like_count_html', $html, $comment);
         return $html;
     }
 
@@ -157,6 +174,9 @@ class Plugin {
         return new Comment($commentID, $this, $this->wpdb);
     }
 
+    /**
+     * Ajax method called when user clicks to like a comment.
+     */
     public function ajax_like_comment() {
         if (!isset($_POST['commentID']) || !is_numeric($_POST['commentID'])) {
             wp_send_json_error();
@@ -200,16 +220,28 @@ class Plugin {
         return false;
     }
 
+    /**
+     * Check if the current user has an identity.
+     *
+     * @return bool
+     */
     public function user_has_identity() {
         return isset($_COOKIE['like_comments_user']);
     }
 
+    /**
+     * Generate a new identity for the user, and
+     * assign it as a cookie.
+     */
     public function generate_user_identity() {
         $identity = uniqid('', true);
         setcookie('like_comments_user', $identity, strtotime('+30 days'), '/');
         $_COOKIE['like_comments_user'] = $identity;
     }
 
+    /**
+     * Create a custom database table to store comment likes.
+     */
     public function install_db() {
         $charset_collate = $this->wpdb->get_charset_collate();
 
@@ -224,8 +256,13 @@ class Plugin {
         dbDelta($sql);
     }
 
+    /**
+     * Remove traces of this plugin from the database.
+     */
     public function uninstall_db() {
         $this->wpdb->query("DROP TABLE IF EXISTS {$this->table_name}");
-        // @TODO: delete all related comment meta
+
+        $metaTable = $this->wpdb->prefix . 'commentmeta';
+        $this->wpdb->query("DELETE FROM $metaTable WHERE meta_key = 'comment_likes'");
     }
 }
