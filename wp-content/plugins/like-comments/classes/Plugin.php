@@ -5,6 +5,8 @@ namespace LikeComments;
 use stdClass;
 use Exception;
 use wpdb;
+use DateTime;
+use DateTimeZone;
 
 class Plugin {
     public $version = '0.0.1';
@@ -27,6 +29,7 @@ class Plugin {
 
         // Hook in to filters and actions
         add_filter('comment_output',              array($this, 'comment_output'), 10, 4); // Filter comment HTML
+        add_filter('comments_array',              array($this, 'reorder_comments'));      // Sort comments by popularity
         add_action('wp_enqueue_scripts',          array($this, 'enqueue_assets'));        // Add our CSS & JS to the page
         add_action('wp_ajax_like_comment',        array($this, 'ajax_like_comment'));     // AJAX endpoint
         add_action('wp_ajax_nopriv_like_comment', array($this, 'ajax_like_comment'));     // AJAX endpoint (for unauthenticated users)
@@ -34,6 +37,51 @@ class Plugin {
         // Register activation hooks
         register_activation_hook(__FILE__,        array($this, 'install_db'));            // Create database tables
         register_uninstall_hook(__FILE__,         array($this, 'uninstall_db'));          // Remove database tables
+    }
+
+    /**
+     * Sort comments to appear in order of popularity
+     *
+     * This method looks complicated (it is, unfortunately) so I'll explain:
+     *  – Top-level comments will be sorted by number of likes, then by date posted (DESC)
+     *  – Child comments will be sorted by date posted (ASC) regardless of like count
+     *
+     * The date-based sorting of child comments allows for a proper discussion thread, but by sorting
+     * top-level comments by likes first we get a view of the most popular comments.
+     *
+     * Settings > Discussion *must be set* with:
+     * "Comments should be displayed with the NEWER comments at the top of each page"
+     *
+     * @param $comments
+     * @return array
+     */
+    public function reorder_comments($comments) {
+        $likes = [];
+        $dates = [];
+        $parents = [];
+
+        $childI = 1;
+
+        foreach ($comments as $comment) {
+            $dateTime = new DateTime($comment->comment_date_gmt, new DateTimeZone('GMT'));
+            $dates[] = $dateTime;
+
+            if ($comment->comment_parent != 0) {
+                $likes[] = 0;
+                $parents[] = $childI;
+                $childI++;
+            } else {
+                $objComment = $this->newComment($comment->comment_ID);
+                $likes[] = $objComment->getLikeCount();
+                $parents[] = 0;
+            }
+        }
+
+        array_multisort($parents, SORT_DESC, $likes, SORT_DESC, $dates, SORT_DESC, $comments);
+
+        $comments = array_reverse($comments);
+
+        return $comments;
     }
 
     /**
@@ -106,7 +154,7 @@ class Plugin {
      * @return Comment
      */
     public function newComment($commentID) {
-        return new Comment($_POST['commentID'], $this, $this->wpdb);
+        return new Comment($commentID, $this, $this->wpdb);
     }
 
     public function ajax_like_comment() {
