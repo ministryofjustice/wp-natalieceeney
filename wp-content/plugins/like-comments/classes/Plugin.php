@@ -61,9 +61,9 @@ class Plugin {
      * @return array
      */
     public function reorder_comments($comments) {
-        $likes = [];
-        $dates = [];
-        $parents = [];
+        $likes = array();
+        $dates = array();
+        $parents = array();
 
         $childI = 1;
 
