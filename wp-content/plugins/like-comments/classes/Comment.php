@@ -89,10 +89,6 @@ class Comment {
         update_comment_meta($comment_ID, 'comment_likes', $count);
     }
 
-    public function unlike() {
-
-    }
-
     public function getLikeCount() {
         $comment_ID = $this->object->comment_ID;
         return intval(get_comment_meta($comment_ID, 'comment_likes', true));
