@@ -36,7 +36,6 @@ class Plugin {
 
         // Hook in to filters and actions
         add_filter('comment_output',                array($this, 'comment_output'), 10, 4); // Filter comment HTML
-        add_filter('comments_array',                array($this, 'reorder_comments'));      // Sort comments by popularity
         add_action('wp_enqueue_scripts',            array($this, 'enqueue_assets'));        // Add our CSS & JS to the page
         add_action('wp_ajax_like_comment',          array($this, 'ajax_like_comment'));     // AJAX endpoint
         add_action('wp_ajax_nopriv_like_comment',   array($this, 'ajax_like_comment'));     // AJAX endpoint (for unauthenticated users)
@@ -68,6 +67,8 @@ class Plugin {
      *
      * Settings > Discussion *must be set* with:
      * "Comments should be displayed with the NEWER comments at the top of each page"
+     *
+     * To be applied to filter: comments_array
      *
      * @param $comments
      * @return array
@@ -126,10 +127,13 @@ class Plugin {
      * @return string
      */
     public function like_button_html(Comment $comment) {
-        $html = sprintf('<a href="#" data-comment-id="%1$d" class="lc_like_button">%2$s</a>', $comment->object->comment_ID, 'Like');
-
-        if ($comment->hasAlreadyBeenLiked()) {
+        $postID = $comment->object->comment_post_ID;
+        if (!comments_open($postID)) {
+            $html = '';
+        } else if ($comment->hasAlreadyBeenLiked()) {
             $html = '<span class="lc_like_button lc_like_button--liked">Liked</span>';
+        } else {
+            $html = sprintf('<a href="#" data-comment-id="%1$d" class="lc_like_button">%2$s</a>', $comment->object->comment_ID, 'Like');
         }
 
         $html = apply_filters('LikeComments/like_button_html', $html, $comment);
@@ -147,12 +151,12 @@ class Plugin {
 
         if ($likeCount < 1) {
             // No likes here – output nothing.
-            return '<span class="lc_like_count lc_like_count--empty">&nbsp;</span>';
+            return '<span class="lc_like_count lc_like_count--empty"></span>';
         }
 
         $imgUrl = plugins_url('/img/thumbsup.png', $this->pluginFile);
         $likeCount = $comment->getLikeCount();
-        $html = '&ndash; <img src="' . $imgUrl . '" width="18" height="18" alt="Thumbs up icon" /> ';
+        $html = '<img src="' . $imgUrl . '" width="18" height="18" alt="Thumbs up icon" class="lc_thumbsup" /> ';
         $html .= $likeCount;
 
         $title = $likeCount . ' ' . _n('person', 'people', $likeCount) . ' like this comment';
@@ -197,15 +201,25 @@ class Plugin {
 
         try {
             $comment = $this->newComment($_POST['commentID']);
-            $comment->like();
-            wp_send_json_success(array(
-                'likeButtonHtml' => $this->like_button_html($comment),
-                'likeCountHtml' => $this->like_count_html($comment),
-            ));
         } catch (Exception $e) {
             wp_send_json_error(array(
                 'message' => $e->getMessage(),
             ));
+        }
+
+        if (!empty($comment)) {
+            $postID = $comment->object->comment_post_ID;
+            if (!comments_open($postID)) {
+                wp_send_json_error(array(
+                    'message' => 'Comments are closed for this post.',
+                ));
+            } else {
+                $comment->like();
+                wp_send_json_success(array(
+                    'likeButtonHtml' => $this->like_button_html($comment),
+                    'likeCountHtml' => $this->like_count_html($comment),
+                ));
+            }
         }
 
         wp_die();
